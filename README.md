@@ -1,6 +1,14 @@
+<div align="center">
+<img src="icon.svg" alt="这是icon" width="128">
+  
 # Cloud Mail
 
 一个跑在 **Cloudflare Worker + D1** 上的极简邮件收发站：接收 Email Routing 投递进来的邮件，并支持用账号登录后在浏览器里读信、写信。
+
+[![Release](https://img.shields.io/github/v/release/LhyCloud/Cloudflare-Email-Worker?style=flat-square&label=release)](https://github.com/LhyCloud/Cloudflare-Email-Worker/releases/latest) [![Downloads](https://img.shields.io/github/downloads/LhyCloud/Cloudflare-Email-Worker/total?style=flat-square&logo=github)](https://github.com/LhyCloud/Cloudflare-Email-Worker/releases)
+[![Runtime](https://img.shields.io/badge/runtime-Cloudflare%20Workers-FAAF40?style=flat-square&logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)  
+
+</div>
 
 界面走「三栏 + 等宽阅读区」的现代邮箱布局，浅色 / 深色 / 跟随系统三套主题，桌面与手机都能用。
 
