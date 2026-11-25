@@ -1,5 +1,5 @@
 <div align="center">
-<img src="icon.svg" alt="这是icon" width="128">
+<img src="icon.svg" alt="这是icon" width="88">
   
 # Cloud Mail
 
