@@ -1,0 +1,21 @@
+{
+  "name": "cloud-mail-worker",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "多用户 Cloudflare Email Worker：Worker + D1 收发邮件，自动建表",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-ui.mjs",
+    "test": "npm run build && node scripts/test.mjs && node scripts/test-upgrade.mjs && node scripts/test-domain.mjs",
+    "dev": "npm run build && node scripts/preview.mjs",
+    "deploy": "npm run build && wrangler deploy",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "devDependencies": {
+    "wrangler": "^3.99.0"
+  }
+}

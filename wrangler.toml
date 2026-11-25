@@ -1,0 +1,35 @@
+name = "cloud-mail"
+main = "dist/worker.js"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+# 数据表会在首次请求时自动创建，无需手工执行 SQL。
+[[d1_databases]]
+binding = "DB"
+database_name = "cloud-mail"
+database_id = "REPLACE_WITH_YOUR_D1_ID"
+
+# 发信服务：Cloudflare Dashboard → Email → Email Routing → Email Workers
+# 绑定名称必须是 EMAIL
+[[send_email]]
+name = "EMAIL"
+
+[vars]
+# 收件域名：填了就以它为准；留空时系统会从收到的第一封邮件（或访问域名）自动识别
+MAIL_DOMAIN = "example.com"
+# 选填：首次启动自动创建管理员。ADMIN_EMAIL 可只填前缀（如 "admin"），域名自动补全；
+# 两者都不填时默认 admin@<识别到的域名>，识不到就留给网页初始化向导
+# ADMIN_EMAIL = "admin"
+# ADMIN_PASSWORD = "change-me-please"
+# 选填：全站保留的邮件条数上限（默认 500，所有账号一起算，超出清理最旧的；填 0 不限）
+# MAIL_RETENTION = "500"
+# 选填：垃圾箱邮件保留天数（默认 30，过期自动删除）
+# TRASH_RETENTION_DAYS = "30"
+# 选填：登录会话有效期（天）
+# SESSION_TTL_DAYS = "7"
+# 选填：密码哈希迭代次数。Workers 的 WebCrypto 上限为 10 万轮，填更大也会被自动压回上限
+# PBKDF2_ITERATIONS = "100000"
+
+[observability]
+enabled = true
